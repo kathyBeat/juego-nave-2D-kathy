@@ -77,25 +77,21 @@ public class GameManager : MonoBehaviour
                 vida1.SetActive(true);
                 vida2.SetActive(false);
                 vida3.SetActive(false);
-                Debug.Log("Vidas restantes: 3 (todas las vidas activas)");
                 break;
             case 2:
                 vida1.SetActive(false);
                 vida2.SetActive(true);
                 vida3.SetActive(false);
-                Debug.Log("Vidas restantes: 2 (todas las vidas activas)");
                 break;
             case 1:
                 vida1.SetActive(false);
                 vida2.SetActive(false);
                 vida3.SetActive(true);
-                Debug.Log("Vidas restantes: 1 (todas las vidas activas)");
                 break;
             case 0:
                 vida1.SetActive(false);
                 vida2.SetActive(false);
                 vida3.SetActive(true);
-                Debug.Log("Vidas restantes: 0 (todas las vidas activas)");
                 break;
             default:
                 break;

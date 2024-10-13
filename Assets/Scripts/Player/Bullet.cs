@@ -31,7 +31,6 @@ public class Bullet : MonoBehaviour
     {
         if(collision != null)
         {
-            Debug.Log("Collided with : " + collision.gameObject.name);
 
             if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Meteor"))
             {

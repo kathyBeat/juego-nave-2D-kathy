@@ -224,22 +224,14 @@ public class Player : MonoBehaviour
     void ChangeShipState()
     {
         var currentState = shipState;
-        Debug.Log(currentState);
 
-        //search by name
-        var newSprite = shipSprites.Find(x => x.name == currentState.ToString());
-
-        //search by id
-        //var newsprite = shipSprites[(int)currentState];
-
-        var spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = newSprite;
+        setShipSprite(currentState);
 
         switch (currentState)
         {
             case ShipState.FullHealth:
                 shipState = ShipState.SlightlyDamaged;
-                 break;
+                break;
             case ShipState.SlightlyDamaged:
                 shipState = ShipState.Damaged;
                 break;
@@ -251,9 +243,14 @@ public class Player : MonoBehaviour
         }
     }
 
+    void setShipSprite(ShipState currentState){
+        var newSprite = shipSprites.Find(x => x.name == currentState.ToString());
+        var spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = newSprite;
+    }
+
     public void AddPowerUp()
     {
-        Debug.Log("powerUp " + powerUPCount + "Limit " + powerUplimit);
         if(powerUPCount < powerUplimit)
         {
             powerUPCount += 0.2f;
@@ -290,7 +287,6 @@ public class Player : MonoBehaviour
             if(lives > 1)
             {
                 lives--;
-                Debug.Log("Lives: " + lives);
                 gameManager.UpdateLivesDisplay(); // Actualiza la visualización de vidas
             }
             else
